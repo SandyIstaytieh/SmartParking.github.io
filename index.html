@@ -10,200 +10,74 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f5e6c8; /* Beige Background */
             color: #333;
-            background-color: #f8f9fa;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #007BFF;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar h1 {
-            color: #fff;
-            margin: 0;
-            font-size: 1.5rem;
-        }
-
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1rem;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-        /* Hero Section */
-        .hero {
-            background-image: url('parking-background.jpg'); /* Replace with your image */
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             text-align: center;
-            color: #fff;
-            padding: 20px;
         }
 
-        .hero-content {
-            background: rgba(0, 0, 0, 0.6);
+        /* Welcome Section */
+        .welcome {
+            background-color: #ff5733;
+            color: white;
+            padding: 50px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Description Section */
+        .description {
             padding: 30px;
-            border-radius: 10px;
-            max-width: 800px;
+            font-size: 1.3rem;
+            color: #444;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+        /* Sign-Up Section */
+        .signup {
+            background-color: #3498db;
+            padding: 40px;
+            color: white;
         }
-
-        .hero p {
-            font-size: 1.2rem;
+        .signup h2 {
             margin-bottom: 20px;
         }
-
         .btn {
-            background-color: #ffc107;
-            color: #000;
-            padding: 12px 25px;
-            font-size: 1.2rem;
+            display: block;
+            width: 250px;
+            margin: 15px auto;
+            padding: 15px;
+            font-size: 1rem;
+            color: white;
+            background-color: #2ecc71;
             border: none;
+            cursor: pointer;
             border-radius: 5px;
             text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
         }
-
+        .btn.phone {
+            background-color: #f39c12;
+        }
         .btn:hover {
-            background-color: #ff9800;
-        }
-
-        /* Features Section */
-        .features {
-            text-align: center;
-            padding: 50px 20px;
-            background: #fff;
-        }
-
-        .features h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .feature-box {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .feature {
-            background: #007BFF;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 250px;
-            text-align: center;
-        }
-
-        /* How It Works Section */
-        .how-it-works {
-            text-align: center;
-            padding: 50px 20px;
-            background: #f8f9fa;
-        }
-
-        .how-it-works h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .steps {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .step {
-            background: #28a745;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 250px;
-            text-align: center;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <h1>Smart Parking</h1>
-        <div>
-            <a href="#features">Features</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#signup">Sign Up</a>
-        </div>
+    <!-- Welcome Section -->
+    <div class="welcome">Welcome To Smart Parking Website</div>
+
+    <!-- Description Section -->
+    <div class="description">
+        <p>Our smart parking system makes finding and reserving a parking spot easier than ever. 
+        With real-time tracking and easy access, you save time and avoid stress.</p>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>🚗 Welcome To Smart Parking Website 🚗</h1>
-            <p>Say goodbye to wasted time! Our smart parking system makes finding and reserving a spot effortless.</p>
-            <a href="#signup" class="btn">Get Started</a>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <h2>Why Choose Smart Parking?</h2>
-        <div class="feature-box">
-            <div class="feature">🔍 Real-Time Spot Availability</div>
-            <div class="feature">📱 Easy QR Code Access</div>
-            <div class="feature">🚗 Smart Car Verification</div>
-            <div class="feature">💳 Automatic Payment System</div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
-        <h2>How It Works</h2>
-        <div class="steps">
-            <div class="step">📝 Register & Reserve</div>
-            <div class="step">📲 Scan QR Code</div>
-            <div class="step">📸 Car Verification</div>
-            <div class="step">💳 Pay Automatically</div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Smart Parking System. All rights reserved.</p>
-    </footer>
+    <!-- Sign-Up Section -->
+    <div class="signup">
+        <h2>Sign Up Now</h2>
+        <a href="#" class="btn">Sign Up with Gmail</a>
+        <a href="#" class="btn phone">Sign Up with Phone Number</a>
+    </div>
 
 </body>
 </html>
