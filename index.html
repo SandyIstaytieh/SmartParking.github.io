@@ -10,35 +10,58 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5e6c8; /* Beige Background */
+            background-color: #f8f9fa;
             color: #333;
             text-align: center;
         }
 
-        /* Welcome Section */
+        /* Welcome Page */
         .welcome {
-            background-color: #ff5733;
-            color: white;
-            padding: 50px;
-            font-size: 2rem;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
             font-weight: bold;
+            background-color: #007bff;
+            color: white;
+        }
+        .continue-btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
         }
 
         /* Description Section */
         .description {
-            padding: 30px;
-            font-size: 1.3rem;
-            color: #444;
+            padding: 40px;
+            font-size: 1.2rem;
         }
 
         /* Sign-Up Section */
         .signup {
-            background-color: #3498db;
             padding: 40px;
-            color: white;
+            background-color: #ffffff;
+            color: #333;
         }
         .signup h2 {
             margin-bottom: 20px;
+        }
+        .input-field, .country-code {
+            width: 250px;
+            padding: 10px;
+            margin: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
         .btn {
             display: block;
@@ -47,36 +70,67 @@
             padding: 15px;
             font-size: 1rem;
             color: white;
-            background-color: #2ecc71;
+            background-color: #007bff;
             border: none;
             cursor: pointer;
             border-radius: 5px;
             text-decoration: none;
         }
-        .btn.phone {
-            background-color: #f39c12;
-        }
-        .btn:hover {
-            opacity: 0.8;
+        .privacy-note {
+            font-size: 0.9rem;
+            color: gray;
+            margin-top: 10px;
         }
     </style>
+    <script>
+        function showDescription() {
+            document.getElementById('welcomePage').classList.add('hidden');
+            document.getElementById('descriptionPage').classList.remove('hidden');
+        }
+        function showSignup() {
+            document.getElementById('descriptionPage').classList.add('hidden');
+            document.getElementById('signupPage').classList.remove('hidden');
+        }
+    </script>
 </head>
 <body>
 
-    <!-- Welcome Section -->
-    <div class="welcome">Welcome To Smart Parking Website</div>
-
-    <!-- Description Section -->
-    <div class="description">
-        <p>Our smart parking system makes finding and reserving a parking spot easier than ever. 
-        With real-time tracking and easy access, you save time and avoid stress.</p>
+    <!-- Welcome Page -->
+    <div id="welcomePage" class="welcome">
+        Welcome to Smart Parking Website
+        <button class="continue-btn" onclick="showDescription()">Continue</button>
     </div>
 
-    <!-- Sign-Up Section -->
-    <div class="signup">
+    <!-- Description Page -->
+    <div id="descriptionPage" class="hidden description">
+        <p>Smart Parking System, issued in 2025, is designed to revolutionize parking with seamless, secure, and automated solutions. 
+        Our platform allows users to find and book parking spaces easily, ensuring convenience and efficiency.</p>
+        <p><strong>Advantages:</strong></p>
+        <ul>
+            <li>Real-time parking availability</li>
+            <li>QR code access for hassle-free entry</li>
+            <li>Automated security verification</li>
+            <li>Accurate payment system based on usage</li>
+        </ul>
+        <button class="continue-btn" onclick="showSignup()">Continue</button>
+    </div>
+
+    <!-- Sign-Up Page -->
+    <div id="signupPage" class="hidden signup">
         <h2>Sign Up Now</h2>
-        <a href="#" class="btn">Sign Up with Gmail</a>
-        <a href="#" class="btn phone">Sign Up with Phone Number</a>
+        <select class="country-code">
+            <option value="+1">+1 (USA)</option>
+            <option value="+44">+44 (UK)</option>
+            <option value="+961">+961 (Lebanon)</option>
+            <option value="+91">+91 (India)</option>
+            <option value="+33">+33 (France)</option>
+        </select>
+        <input type="text" class="input-field" placeholder="Enter phone number">
+        <br>
+        <input type="email" class="input-field" placeholder="Enter your email">
+        <br>
+        <p class="privacy-note">Your private details are secured and never shared outside this website.</p>
+        <button class="btn">Sign Up</button>
     </div>
 
 </body>
