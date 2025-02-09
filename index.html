@@ -5,133 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Parking System</title>
     <style>
-        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: #f5f5dc; /* Beige background */
             text-align: center;
+            color: #333;
         }
-
-        /* Welcome Page */
-        .welcome {
-            height: 100vh;
+        .container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            background-color: #007bff;
-            color: white;
+            height: 100vh;
         }
-        .continue-btn {
-            margin-top: 20px;
+        .btn {
+            background-color: #ff9800;
+            color: #fff;
             padding: 15px 30px;
-            font-size: 1.2rem;
-            background-color: #28a745;
-            color: white;
+            text-decoration: none;
             border: none;
-            cursor: pointer;
             border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #e68900;
         }
         .hidden {
             display: none;
         }
-
-        /* Description Section */
-        .description {
-            padding: 40px;
-            font-size: 1.2rem;
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin-top: 20px;
         }
-
-        /* Sign-Up Section */
-        .signup {
-            padding: 40px;
-            background-color: #ffffff;
-            color: #333;
-        }
-        .signup h2 {
-            margin-bottom: 20px;
-        }
-        .input-field, .country-code {
-            width: 250px;
+        select, input {
+            width: 100%;
             padding: 10px;
-            margin: 10px;
-            font-size: 1rem;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .btn {
-            display: block;
-            width: 250px;
-            margin: 15px auto;
-            padding: 15px;
-            font-size: 1rem;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .privacy-note {
-            font-size: 0.9rem;
-            color: gray;
-            margin-top: 10px;
-        }
     </style>
-    <script>
-        function showDescription() {
-            document.getElementById('welcomePage').classList.add('hidden');
-            document.getElementById('descriptionPage').classList.remove('hidden');
-        }
-        function showSignup() {
-            document.getElementById('descriptionPage').classList.add('hidden');
-            document.getElementById('signupPage').classList.remove('hidden');
-        }
-    </script>
 </head>
 <body>
-
-    <!-- Welcome Page -->
-    <div id="welcomePage" class="welcome">
-        Welcome to Smart Parking Website
-        <button class="continue-btn" onclick="showDescription()">Continue</button>
+    <!-- Welcome Screen -->
+    <div class="container" id="welcomeScreen">
+        <h1>Welcome to Smart Parking Website</h1>
+        <button class="btn" onclick="showDescription()">Continue</button>
     </div>
 
-    <!-- Description Page -->
-    <div id="descriptionPage" class="hidden description">
-        <p>Smart Parking System, issued in 2025, is designed to revolutionize parking with seamless, secure, and automated solutions. 
-        Our platform allows users to find and book parking spaces easily, ensuring convenience and efficiency.</p>
-        <p><strong>Advantages:</strong></p>
-        <ul>
-            <li>Real-time parking availability</li>
-            <li>QR code access for hassle-free entry</li>
-            <li>Automated security verification</li>
-            <li>Accurate payment system based on usage</li>
+    <!-- Description Screen -->
+    <div class="container hidden" id="descriptionScreen">
+        <h2>🚗 About This Website 🚗</h2>
+        <p>
+            Finding a parking spot has never been easier! Smart Parking gives you a fast, secure, and stress-free way to park.
+        </p>
+        <ul style="text-align: left; max-width: 600px;">
+            <li>✅ Check Available Spots – View real-time parking availability on our map.</li>
+            <li>✅ Easy Entry – Register online and get your unique QR code for instant access.</li>
+            <li>✅ Smart Verification – Cameras ensure you park in your designated spot.</li>
+            <li>✅ Seamless Payment – Your session starts automatically once parked, and you pay only for the time you use.</li>
         </ul>
-        <button class="continue-btn" onclick="showSignup()">Continue</button>
+        <p>🚀 Park smarter, not harder! Sign up now and enjoy the future of parking!</p>
+        <button class="btn" onclick="showSignUp()">Sign Up</button>
     </div>
 
-    <!-- Sign-Up Page -->
-    <div id="signupPage" class="hidden signup">
-        <h2>Sign Up Now</h2>
-        <select class="country-code">
-            <option value="+1">+1 (USA)</option>
-            <option value="+44">+44 (UK)</option>
-            <option value="+961">+961 (Lebanon)</option>
-            <option value="+91">+91 (India)</option>
-            <option value="+33">+33 (France)</option>
-        </select>
-        <input type="text" class="input-field" placeholder="Enter phone number">
-        <br>
-        <input type="email" class="input-field" placeholder="Enter your email">
-        <br>
-        <p class="privacy-note">Your private details are secured and never shared outside this website.</p>
-        <button class="btn">Sign Up</button>
+    <!-- Sign Up Screen -->
+    <div class="container hidden" id="signUpScreen">
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <p>Your private details are never shared outside this website.</p>
+            <select id="signUpOption" onchange="toggleInput()">
+                <option value="email">Sign up with Email</option>
+                <option value="phone">Sign up with Phone Number</option>
+            </select>
+            
+            <input type="email" id="emailInput" placeholder="Enter your email">
+            
+            <div id="phoneInputContainer" class="hidden">
+                <select id="countryCode">
+                    <option value="+1">+1 (USA)</option>
+                    <option value="+44">+44 (UK)</option>
+                    <option value="+33">+33 (France)</option>
+                    <option value="+49">+49 (Germany)</option>
+                    <option value="+961">+961 (Lebanon)</option>
+                    <!-- More country codes can be added here -->
+                </select>
+                <input type="tel" id="phoneInput" placeholder="Enter your phone number">
+            </div>
+            
+            <button class="btn">Submit</button>
+        </div>
     </div>
 
+    <script>
+        function showDescription() {
+            document.getElementById("welcomeScreen").classList.add("hidden");
+            document.getElementById("descriptionScreen").classList.remove("hidden");
+        }
+
+        function showSignUp() {
+            document.getElementById("descriptionScreen").classList.add("hidden");
+            document.getElementById("signUpScreen").classList.remove("hidden");
+        }
+
+        function toggleInput() {
+            let option = document.getElementById("signUpOption").value;
+            if (option === "email") {
+                document.getElementById("emailInput").classList.remove("hidden");
+                document.getElementById("phoneInputContainer").classList.add("hidden");
+            } else {
+                document.getElementById("emailInput").classList.add("hidden");
+                document.getElementById("phoneInputContainer").classList.remove("hidden");
+            }
+        }
+    </script>
 </body>
 </html>
