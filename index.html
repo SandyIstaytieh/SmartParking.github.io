@@ -5,27 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Parking System</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            color: #333;
         }
-        header {
-            background-color: #333;
+
+        /* Hero Section with Background Image */
+        .hero {
+            background-image: url('parking-background.jpg'); /* Replace with your image file name */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Full screen height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             color: #fff;
-            padding: 20px;
         }
-        h1 {
+
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
             margin: 0;
         }
-        .content {
-            padding: 20px;
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 20px 0;
         }
+
+        .hero .btn {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .hero .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
         footer {
             background-color: #333;
             color: #fff;
+            text-align: center;
             padding: 10px;
             position: fixed;
             bottom: 0;
@@ -34,15 +69,32 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Smart Parking System</h1>
-    </header>
-    <div class="content">
-        <p>This is a project to showcase a smart parking solution for urban areas.</p>
-        <p>Stay tuned for more updates!</p>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Smart Parking System</h1>
+            <p>
+                <### **🚗 Welcome To Smart Parking Website! 🚗**  
+
+Say goodbye to endless circling and frustrating parking hunts! **[Your Smart Parking Name]** is here to make parking effortless, secure, and 100% hassle-free.  
+
+🔹 **Find a Spot in Seconds** – Check real-time availability on our interactive map.  
+🔹 **Scan & Park Instantly** – Get your unique QR code, scan it at the entrance, and drive in.  
+🔹 **Smart Security System** – Our cameras verify your car to ensure you're in the right spot.  
+🔹 **Automatic Payment** – Once parked, our system starts the timer, and you only pay for the time you use.  
+
+🚀 **Fast. Smart. Secure.** No more wasted time—just smooth parking at your fingertips!  
+
+👉 **Sign up now and experience the future of parking!**>
+                This website showcases our Smart Parking System, an innovative solution designed to simplify urban parking. Our goal is to reduce traffic congestion and make parking more efficient using cutting-edge technology.
+            </p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Smart Parking System</p>
+        <p>&copy; 2025 Smart Parking System. All rights reserved.</p>
     </footer>
 </body>
 </html>
