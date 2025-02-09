@@ -11,84 +11,192 @@
             margin: 0;
             padding: 0;
             color: #333;
+            background-color: #f8f9fa;
         }
 
-        /* Hero Section with Background Image */
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #007BFF;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar h1 {
+            color: #fff;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
         .hero {
-            background-image: url('parking-background.jpg'); /* Replace with your image file name */
+            background-image: url('parking-background.jpg'); /* Replace with your image */
             background-size: cover;
             background-position: center;
-            height: 100vh; /* Full screen height */
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: #fff;
+            padding: 20px;
         }
 
         .hero-content {
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
             border-radius: 10px;
             max-width: 800px;
         }
 
         .hero h1 {
             font-size: 3rem;
-            margin: 0;
+            margin-bottom: 10px;
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
 
-        .hero .btn {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
+        .btn {
+            background-color: #ffc107;
+            color: #000;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border: none;
             border-radius: 5px;
-            font-size: 1rem;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
         }
 
-        .hero .btn:hover {
-            background-color: #0056b3;
+        .btn:hover {
+            background-color: #ff9800;
+        }
+
+        /* Features Section */
+        .features {
+            text-align: center;
+            padding: 50px 20px;
+            background: #fff;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-box {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            background: #007BFF;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            text-align: center;
+            padding: 50px 20px;
+            background: #f8f9fa;
+        }
+
+        .how-it-works h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            background: #28a745;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
         }
 
         /* Footer */
         footer {
-            background-color: #333;
-            color: #fff;
+            background: #333;
+            color: white;
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>Smart Parking</h1>
+        <div>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#signup">Sign Up</a>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Welcome to Smart Parking System</h1>
-            <p>
-                <### **🚗 Welcome To Smart Parking Website! 🚗**  
+            <h1>🚗 Welcome to the Future of Parking! 🚗</h1>
+            <p>Say goodbye to wasted time! Our smart parking system makes finding and reserving a spot effortless.</p>
+            <a href="#signup" class="btn">Get Started</a>
+        </div>
+    </section>
 
-Say goodbye to endless circling and frustrating parking hunts! **[Your Smart Parking Name]** is here to make parking effortless, secure, and 100% hassle-free.  
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Why Choose Smart Parking?</h2>
+        <div class="feature-box">
+            <div class="feature">🔍 Real-Time Spot Availability</div>
+            <div class="feature">📱 Easy QR Code Access</div>
+            <div class="feature">🚗 Smart Car Verification</div>
+            <div class="feature">💳 Automatic Payment System</div>
+        </div>
+    </section>
 
-🔹 **Find a Spot in Seconds** – Check real-time availability on our interactive map.  
-🔹 **Scan & Park Instantly** – Get your unique QR code, scan it at the entrance, and drive in.  
-🔹 **Smart Security System** – Our cameras verify your car to ensure you're in the right spot.  
-🔹 **Automatic Payment** – Once parked, our system starts the timer, and you only pay for the time you use.  
-
-🚀 **Fast. Smart. Secure.** No more wasted time—just smooth parking at your fingertips!  
-
-👉 **Sign up now and experience the future of parking!**>
-                This website showcases our Smart Parking System, an innovative solution designed to simplify urban parking. Our goal is to reduce traffic congestion and make parking more efficient using cutting-edge technology.
-            </p>
-            <a href="#about" class="btn">Learn More</a>
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">📝 Register & Reserve</div>
+            <div class="step">📲 Scan QR Code</div>
+            <div class="step">📸 Car Verification</div>
+            <div class="step">💳 Pay Automatically</div>
         </div>
     </section>
 
@@ -96,5 +204,6 @@ Say goodbye to endless circling and frustrating parking hunts! **[Your Smart Par
     <footer>
         <p>&copy; 2025 Smart Parking System. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
