@@ -1,12 +1,5 @@
-/* General Styles */
-body, h1, p, form, label, input, button {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
 body {
-    background-image: url('https://sl.bing.net/jkpkliY5sNU'); /* New background photo */
+    background-image: url('https://sl.bing.net/jkpkliY5sNU'); /* Background photo */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -18,25 +11,18 @@ body {
     text-align: center;
 }
 
-/* Homepage Container */
-.home-container {
-    max-width: 800px;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 3.5rem; /* Bigger font size */
-    margin-bottom: 20px;
-    color: #ffdd57; /* Yellow color for heading */
-}
-
-/* Registration Page Container */
 .register-container {
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
     padding: 30px;
     border-radius: 10px;
     max-width: 400px;
     width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem; /* Bigger font size */
+    margin-bottom: 20px;
+    color: #ffdd57; /* Yellow color for heading */
 }
 
 form {
@@ -79,7 +65,6 @@ button:hover {
     background-color: #ffcc00; /* Darker yellow on hover */
 }
 
-/* Success Message */
 .success-message {
     display: none; /* Hidden by default */
     background-color: rgba(0, 128, 0, 0.9); /* Green background */
