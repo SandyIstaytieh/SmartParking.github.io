@@ -6,7 +6,7 @@ body, h1, p, form, label, input, button {
 }
 
 body {
-    background-image: url('https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Linked background image */
+    background-image: url('https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Parking background image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,20 +20,21 @@ body {
 
 .container {
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     max-width: 400px;
     width: 100%;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Bigger font size */
     margin-bottom: 20px;
+    color: #ffdd57; /* Yellow color for heading */
 }
 
 p {
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.2rem; /* Bigger font size */
+    line-height: 1.6;
     margin-bottom: 20px;
 }
 
@@ -43,57 +44,55 @@ form {
 }
 
 label {
-    font-size: 1rem;
-    margin-bottom: 5px;
+    font-size: 1.1rem; /* Bigger font size */
+    margin-bottom: 10px;
     text-align: left;
+    color: #ffdd57; /* Yellow color for labels */
+}
+
+.input-group {
+    margin-bottom: 20px;
 }
 
 input {
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 12px;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-}
-
-.mobile-input {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.mobile-input span {
-    background-color: #eee;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    font-size: 1rem;
-}
-
-.mobile-input input {
-    flex: 1;
-    border-radius: 0 5px 5px 0;
-    margin-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
 }
 
 button {
-    padding: 10px;
-    background-color: #ffdd57;
+    padding: 12px;
+    background-color: #ffdd57; /* Yellow button */
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
+    color: #000; /* Black text */
 }
 
 button:hover {
-    background-color: #ffcc00;
+    background-color: #ffcc00; /* Darker yellow on hover */
 }
 
 a {
-    color: #ffdd57;
+    color: #ffdd57; /* Yellow links */
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Success Message */
+.success-message {
+    display: none; /* Hidden by default */
+    background-color: rgba(0, 128, 0, 0.9); /* Green background */
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: white;
+    font-size: 1.2rem;
 }
