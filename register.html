@@ -8,12 +8,28 @@
 </head>
 <body>
     <div class="register-container">
-        <h1>Register Your Information </h1>
-        <form id="registrationForm">
-            <!-- Email or Mobile Number -->
-            <label for="emailOrMobile">Email or Mobile Number:</label>
-            <div class="input-group">
-                <input type="text" id="emailOrMobile" name="emailOrMobile" placeholder="Enter your email or mobile number" required>
+        <div id="emailError" class="error-message">
+    Please enter a valid email address.
+</div>
+<div id="passwordError" class="error-message">
+    Password must be at least 6 characters long.
+</div>
+       <form id="registrationForm">
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <div class="input-group">
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+
+    <!-- Password -->
+    <label for="password">Password:</label>
+    <div class="input-group">
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="button">Register</button>
+</form>
             </div>
 
             <!-- Password -->
