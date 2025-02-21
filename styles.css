@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #333; /* Dark text for better readability */
     text-align: center;
 }
 
@@ -26,23 +26,25 @@ body {
 
 /* Welcome Text Box */
 .home-container h1 {
-    font-size: 3.5rem; /* Big font size */
+    font-size: 2.5rem; /* Big but not too big */
     margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    background-color: beige; /* Beige background */
     padding: 20px;
     border-radius: 10px;
-    color: #ffdd57; /* Yellow color for text */
+    color: #333; /* Dark text for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 /* Description Text Box */
 .home-container p {
-    font-size: 1.5rem; /* Smaller font size */
+    font-size: 1.2rem; /* Smaller than the welcome text */
     line-height: 1.6;
     margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    background-color: beige; /* Beige background */
     padding: 20px;
     border-radius: 10px;
-    color: white; /* White color for text */
+    color: #333; /* Dark text for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 /* Register Now Button */
