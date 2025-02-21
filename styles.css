@@ -122,16 +122,20 @@ button:hover {
     background-color: #ffcc00; /* Darker yellow on hover */
 }
 
-#qrCode {
-    margin: 20px 0;
+
+   #qrCode {
+    margin: 20px auto; /* Center horizontally */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
+
 
 #message {
     font-size: 1.1rem;
     color: #333;
     display: none; /* Hidden by default */
 }
-/* Error Message Styles */
 .error-message {
     display: none; /* Hidden by default */
     background-color: rgba(255, 0, 0, 0.8); /* Red background */
