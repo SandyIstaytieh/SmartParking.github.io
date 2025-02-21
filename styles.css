@@ -74,3 +74,60 @@ button:hover {
     color: white;
     font-size: 1.2rem;
 }
+/* QR Page Styles */
+.qr-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    color: #333; /* Dark text for contrast */
+}
+
+.qr-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4CAF50; /* Green color for heading */
+}
+
+.qr-container label {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #333; /* Dark text for labels */
+}
+
+.qr-container input {
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.qr-container button {
+    padding: 15px 30px;
+    background-color: #ffdd57; /* Yellow button */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #000; /* Black text */
+    text-decoration: none;
+}
+
+.qr-container button:hover {
+    background-color: #ffcc00; /* Darker yellow on hover */
+}
+
+#qrCode {
+    margin: 20px 0;
+}
+
+#message {
+    font-size: 1.1rem;
+    color: #333;
+    display: none; /* Hidden by default */
+}
