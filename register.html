@@ -38,17 +38,27 @@
 
     <!-- JavaScript for Form Submission Effect -->
     <script>
-        document.getElementById('registrationForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent form submission
+     document.getElementById('registrationForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent form submission
 
-            // Show success message
-            document.getElementById('successMessage').style.display = 'block';
+    // Get user input
+    const emailOrMobile = document.getElementById('emailOrMobile').value;
+    const password = document.getElementById('password').value;
 
-            // Redirect to homepage after 3 seconds
-            setTimeout(function () {
-    window.location.href = 'qr-page.html'; // Redirect to the QR code page
-}, 3000);
-        });
+    // Validate password
+    if (password.length < 6) {
+        alert('Password must be at least 6 characters long.'); // Show error message
+        return; // Stop further execution
+    }
+
+    // If validation passes, show success message and redirect
+    document.getElementById('successMessage').style.display = 'block';
+
+    // Redirect to QR code page after 3 seconds
+    setTimeout(function () {
+        window.location.href = 'qr-page.html'; // Redirect to the QR code page
+    }, 3000);
+});
     </script>
 </body>
 </html>
