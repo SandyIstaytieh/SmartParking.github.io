@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate QR Code - Smart Parking</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Linked CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> <!-- QR Code Library -->
+</head>
+<body>
+    <div class="qr-container">
+        <h1>Generate Your Parking QR Code</h1>
+        <form id="userForm">
+            <!-- Name -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <!-- Phone Number -->
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <!-- Car Number -->
+            <label for="carNumber">Car Number:</label>
+            <input type="text" id="carNumber" name="carNumber" placeholder="Enter your car number" required>
+
+            <!-- Submit Button -->
+            <button type="submit" class="button">Generate QR Code</button>
+        </form>
+
+        <!-- QR Code Display -->
+        <div id="qrCode"></div>
+
+        <!-- Message -->
+        <p id="message">Save the QR code and use it for parking entry. The code will change each time you visit this page.</p>
+    </div>
+
+    <!-- JavaScript for QR Code Generation -->
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get user input
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const carNumber = document.getElementById('carNumber').value;
+
+            // Generate a unique string for the QR code
+            const uniqueString = `${name}-${phone}-${carNumber}-${Date.now()}`;
+
+            // Clear previous QR code
+            document.getElementById('qrCode').innerHTML = '';
+
+            // Generate new QR code
+            new QRCode(document.getElementById('qrCode'), {
+                text: uniqueString,
+                width: 200,
+                height: 200,
+            });
+
+            // Show message
+            document.getElementById('message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
