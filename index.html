@@ -3,129 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Parking System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5dc; /* Beige background */
-            text-align: center;
-            color: #333;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .btn {
-            background-color: #ff9800;
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .btn:hover {
-            background-color: #e68900;
-        }
-        .hidden {
-            display: none;
-        }
-        .form-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 50%;
-            margin-top: 20px;
-        }
-        select, input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
+    <title>Smart Parking</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Welcome Screen -->
-    <div class="container" id="welcomeScreen">
-        <h1>Welcome to Smart Parking Website</h1>
-        <button class="btn" onclick="showDescription()">Continue</button>
+    <div class="container">
+        <h1>Welcome to Smart Parking 🚗✨</h1>
+        <p>Find and reserve parking spots easily with our smart, user-friendly system. Enjoy a hassle-free parking experience with real-time availability, quick bookings, and secure payments. Your privacy is our top priority — all your personal information is fully protected and kept confidential.</p>
+        <p><strong>Park Smarter. Park Safer.</strong></p>
     </div>
-
-    <!-- Description Screen -->
-    <div class="container hidden" id="descriptionScreen">
-        <h2>🚗 About This Website 🚗</h2>
-        <p>
-            Finding a parking spot has never been easier! Smart Parking gives you a fast, secure, and stress-free way to park.
-        </p>
-        <ul style="text-align: left; max-width: 600px;">
-            <li>✅ Check Available Spots – View real-time parking availability on our map.</li>
-            <li>✅ Easy Entry – Register online and get your unique QR code for instant access.</li>
-            <li>✅ Smart Verification – Cameras ensure you park in your designated spot.</li>
-            <li>✅ Seamless Payment – Your session starts automatically once parked, and you pay only for the time you use.</li>
-        </ul>
-        <p>🚀 Park smarter, not harder! Sign up now and enjoy the future of parking!</p>
-        <button class="btn" onclick="showSignUp()">Sign Up</button>
-    </div>
-
-    <!-- Sign Up Screen -->
-    <div class="container hidden" id="signUpScreen">
-        <div class="form-container">
-            <h2>Sign Up</h2>
-            <p>Your private details are never shared outside this website.</p>
-            <select id="signUpOption" onchange="toggleInput()">
-                <option value="email">Sign up with Email</option>
-                <option value="phone">Sign up with Phone Number</option>
-            </select>
-            
-            <input type="email" id="emailInput" placeholder="Enter your email">
-            
-            <div id="phoneInputContainer" class="hidden">
-                <select id="countryCode">
-                    <option value="+1">+1 (USA)</option>
-                    <option value="+44">+44 (UK)</option>
-                    <option value="+33">+33 (France)</option>
-                    <option value="+49">+49 (Germany)</option>
-                    <option value="+961">+961 (Lebanon)</option>
-                    <!-- More country codes can be added here -->
-                </select>
-                <input type="tel" id="phoneInput" placeholder="Enter your phone number">
-            </div>
-            
-            <button class="btn">Submit</button>
-        </div>
-    </div>
-
-    <script>
-        function showDescription() {
-            document.getElementById("welcomeScreen").classList.add("hidden");
-            document.getElementById("descriptionScreen").classList.remove("hidden");
-        }
-
-        function showSignUp() {
-            document.getElementById("descriptionScreen").classList.add("hidden");
-            document.getElementById("signUpScreen").classList.remove("hidden");
-        }
-
-        function toggleInput() {
-            let option = document.getElementById("signUpOption").value;
-            if (option === "email") {
-                document.getElementById("emailInput").classList.remove("hidden");
-                document.getElementById("phoneInputContainer").classList.add("hidden");
-            } else {
-                document.getElementById("emailInput").classList.add("hidden");
-                document.getElementById("phoneInputContainer").classList.remove("hidden");
-            }
-        }
-    </script>
 </body>
 </html>
