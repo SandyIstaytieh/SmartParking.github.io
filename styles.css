@@ -131,3 +131,13 @@ button:hover {
     color: #333;
     display: none; /* Hidden by default */
 }
+/* Error Message Styles */
+.error-message {
+    display: none; /* Hidden by default */
+    background-color: rgba(255, 0, 0, 0.8); /* Red background */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: white; /* White text */
+    font-size: 1rem;
+}
