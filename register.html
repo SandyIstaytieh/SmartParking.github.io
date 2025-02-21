@@ -9,22 +9,43 @@
 <body>
     <div class="container">
         <h1>Register for Smart Parking 🚗✨</h1>
-        <form action="#" method="post">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-            <label for="mobile">Mobile Number:</label>
-            <div class="mobile-input">
-                <span>+961</span>
-                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+        <form id="registrationForm" action="#" method="post">
+            <!-- Email or Mobile Number -->
+            <label for="emailOrMobile">Email or Mobile Number:</label>
+            <div class="input-group">
+                <input type="text" id="emailOrMobile" name="emailOrMobile" placeholder="Enter your email or mobile number" required>
             </div>
 
+            <!-- Password -->
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
 
+            <!-- Submit Button -->
             <button type="submit" class="button">Register</button>
         </form>
         <p>Already have an account? <a href="index.html">Go back to Home</a></p> <!-- Linked to index.html -->
     </div>
+
+    <!-- Success Message (Hidden by Default) -->
+    <div id="successMessage" class="success-message">
+        <p>🎉 Registration successful! Redirecting to the homepage...</p>
+    </div>
+
+    <!-- JavaScript for Form Submission Effect -->
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Redirect to homepage after 3 seconds
+            setTimeout(function () {
+                window.location.href = 'index.html';
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
