@@ -8,83 +8,78 @@
 </head>
 <body>
     <div class="register-container">
-        <div id="emailError" class="error-message">
-    Please enter a valid email address.
-</div>
-<div id="passwordError" class="error-message">
-    Password must be at least 6 characters long.
-</div>
-       <form id="registrationForm">
-    <!-- Email -->
-    <label for="email">Email:</label>
-    <div class="input-group">
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-    </div>
+        <!-- Error Messages -->
+        <div id="emailOrPhoneError" class="error-message">
+            Please enter a valid email or phone number.
+        </div>
+        <div id="passwordError" class="error-message">
+            Password must be at least 6 characters long.
+        </div>
 
-    <!-- Password -->
-    <label for="password">Password:</label>
-    <div class="input-group">
-        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit" class="button">Register</button>
-</form>
+        <!-- Registration Form -->
+        <form id="registrationForm">
+            <!-- Email or Phone Number -->
+            <label for="emailOrPhone">Email or Phone Number:</label>
+            <div class="input-group">
+                <input type="text" id="emailOrPhone" name="emailOrPhone" placeholder="Enter your email or phone number" required>
             </div>
 
             <!-- Password -->
             <label for="password">Password:</label>
             <div class="input-group">
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                <div id="errorMessage" class="error-message">
-    Password must be at least 6 characters long.
-</div>
             </div>
 
             <!-- Submit Button -->
             <button type="submit" class="button">Register</button>
         </form>
 
-        <p>Already have an account? <a href="register.html">
-            Register here</a></p>
+        <!-- Links -->
+        <p>Already have an account? <a href="register.html">Register here</a></p>
         <p><a href="index.html">Go to Home</a></p>
     </div>
 
     <!-- Success Message (Hidden by Default) -->
     <div id="successMessage" class="success-message">
-        <p>🎉 Registration successful!</p>
+        <p>🎉 Registration successful! Redirecting to the homepage...</p>
     </div>
 
     <!-- JavaScript for Form Submission Effect -->
     <script>
- document.getElementById('registrationForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form submission
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
 
-    // Get user input
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+            // Get user input
+            const emailOrPhone = document.getElementById('emailOrPhone').value;
+            const password = document.getElementById('password').value;
 
-    // Validate email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email regex
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.'); // Show error message
-        return; // Stop further execution
-    }
+            // Validate email or phone number
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email regex
+            const phoneRegex = /^\+?\d{10,14}$/; // Basic phone regex (e.g., +9611234567)
 
-    // Validate password
-    if (password.length < 6) {
-        alert('Password must be at least 6 characters long.'); // Show error message
-        return; // Stop further execution
-    }
+            if (!emailRegex.test(emailOrPhone) && !phoneRegex.test(emailOrPhone)) {
+                document.getElementById('emailOrPhoneError').style.display = 'block'; // Show email/phone error
+                return; // Stop further execution
+            } else {
+                document.getElementById('emailOrPhoneError').style.display = 'none'; // Hide email/phone error
+            }
 
-    // If validation passes, show success message and redirect
-    document.getElementById('successMessage').style.display = 'block';
+            // Validate password
+            if (password.length < 6) {
+                document.getElementById('passwordError').style.display = 'block'; // Show password error
+                return; // Stop further execution
+            } else {
+                document.getElementById('passwordError').style.display = 'none'; // Hide password error
+            }
 
-    // Redirect to QR code page after 3 seconds
-    setTimeout(function () {
-        window.location.href = 'qr-page.html'; // Redirect to the QR code page
-    }, 3000);
-});
+            // If validation passes, show success message and redirect
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Redirect to QR code page after 3 seconds
+            setTimeout(function () {
+                window.location.href = 'qr-page.html'; // Redirect to the QR code page
+            }, 3000);
+        });
     </script>
 </body>
 </html>
